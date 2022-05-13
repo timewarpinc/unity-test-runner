@@ -47,6 +47,8 @@ if [[ -n "$UNITY_LICENSE" ]] || [[ -n "$UNITY_LICENSE_FILE"  ]]; then
   #
   ACTIVATION_SUCCESSFUL=$(echo $ACTIVATION_OUTPUT | grep 'Next license update check is after' | wc -l)
 
+  echo "DEBUG: $ACTIVATION_OUTPUT"
+  
   # Set exit code to 0 if activation was successful
   if [[ $ACTIVATION_SUCCESSFUL -eq 1 ]]; then
     UNITY_EXIT_CODE=0
